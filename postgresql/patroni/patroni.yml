@@ -41,7 +41,7 @@ postgresql:
     listen: 10.10.10.10:5432
     connect_address: 10.10.10.10:5432
     data_dir: /var/data/patroni
-	bin_dir: /usr/pgsql-15/bin/
+    bin_dir: /usr/pgsql-15/bin/
     pgpass: /tmp/pgpass
     authentication:
         replication:
@@ -102,7 +102,7 @@ postgresql:
     listen: 10.10.10.20:5432
     connect_address: 10.10.10.20:5432
     data_dir: /var/data/patroni
-	bin_dir: /usr/pgsql-15/bin/
+    bin_dir: /usr/pgsql-15/bin/
     pgpass: /tmp/pgpass
     authentication:
         replication:
@@ -164,7 +164,7 @@ postgresql:
     listen: 10.10.10.30:5432
     connect_address: 10.10.10.30:5432
     data_dir: /var/data/patroni
-	bin_dir: /usr/pgsql-15/bin/
+    bin_dir: /usr/pgsql-15/bin/
     pgpass: /tmp/pgpass
     authentication:
         replication:
