@@ -70,11 +70,10 @@ Select *  from accounts;
 GRANT ALL ON SCHEMA public TO demo;
 ```
 
-##########################
 
-
+> [!TIP]
 ### Patroni switchover datacenter
-### Check repilication
+## Check repilication
 * \x on;
 * select *  from pg_stat_replication ;  `leader node`
 * select *  from pg_stat_wal_receiver;  `replica node`
