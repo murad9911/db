@@ -32,7 +32,7 @@
 * systemctl stop {etcd,patroni,postgresql}
 * systemctl disable {etcd,patroni,postgresql}
 * mv  /etc/etcd/etcd.conf /etc/etcd/etcd.conf.bk
-* vi /etc/etcd/etcd.conf                             > Add etcd.conf 
+* vi /etc/etcd/etcd.conf
 * systemctl enable --now etcd
 
 ### Patroni setup
@@ -76,7 +76,7 @@ GRANT ALL ON SCHEMA public TO demo;
 ### Patroni switchover datacenter
 ### Check repilication
 * \x on;
-* select *  from pg_stat_replication ;  ###leader node
+* select *  from pg_stat_replication ;  `leader node`
 * select *  from pg_stat_wal_receiver;  #### replica node
 
 * systemctl stop patroni  ####all node primary DR
