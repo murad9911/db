@@ -69,3 +69,16 @@ Select * from accounts;
 
 GRANT ALL ON SCHEMA public TO demo;
 ##########################
+
+
+#######Patroni switchover datacenter#########
+####Check repilication
+\x on;
+select * from pg_stat_replication ;  ###leader node
+select * from pg_stat_wal_receiver;  #### replica node
+################
+systemctl stop patroni  ####all node primary DR
+patronictl -c /etc/patroni.yml list  ### check patroni status on primary cluster
+patronictl -c /etc/patroni.yml edit-config --force -s standby_cluster.host='' -s standby_cluster.port='' -s standby_cluster.create_replica_methods=''   #### Set standby as primary
+patronictl -c /etc/patroni.yml edit-config --force -s standby_cluster.host=<dc2-ip> -s standby_cluster.port=<port> -s standby_cluster.create_replica_methods='- basebackup'   ##### Set Main Primary as Standby-cluster
+patronictl -c /etc/patroni.yml reinit ####first primary node2 and node3
