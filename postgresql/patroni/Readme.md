@@ -32,7 +32,7 @@
 * systemctl stop {etcd,patroni,postgresql}
 * systemctl disable {etcd,patroni,postgresql}
 * mv  /etc/etcd/etcd.conf /etc/etcd/etcd.conf.bk
-* vi /etc/etcd/etcd.conf                             *Add etcd.conf* 
+* vi /etc/etcd/etcd.conf                             > Add etcd.conf 
 * systemctl enable --now etcd
 
 ### Patroni setup
