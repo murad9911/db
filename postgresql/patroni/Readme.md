@@ -1,4 +1,4 @@
-########Set host file############
+####Set host file
 
 10.10.10.10    node1
 10.10.10.20    node2    
