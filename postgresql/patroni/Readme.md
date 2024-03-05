@@ -63,20 +63,22 @@ CREATE DATABASE app;
  \d accounts;
  INSERT INTO accounts (username, password, email, created_at, last_login)
 VALUES ('user', '123456', 'user@test.local', 11-12-13, 11-12-13);
-```
+
 Select *  from accounts;
 
 
 GRANT ALL ON SCHEMA public TO demo;
+```
+
 ##########################
 
 
-#######Patroni switchover datacenter#########
-####Check repilication
-\x on;
-select *  from pg_stat_replication ;  ###leader node
-select *  from pg_stat_wal_receiver;  #### replica node
-################
+### Patroni switchover datacenter
+### Check repilication
+* \x on;
+* select *  from pg_stat_replication ;  ###leader node
+* select *  from pg_stat_wal_receiver;  #### replica node
+
 * systemctl stop patroni  ####all node primary DR
 * patronictl -c /etc/patroni.yml list  ### check patroni status on primary cluster
 * patronictl -c /etc/patroni.yml edit-config --force -s standby_cluster.host='' -s standby_cluster.port='' -s standby_cluster.create_replica_methods=''   #### Set standby as primary
