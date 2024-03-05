@@ -1,25 +1,25 @@
-####Set host file
+### Set host file
 
 10.10.10.10    node1
 10.10.10.20    node2    
 10.10.10.30    node3
 
-# Install the repository RPM:###########
+### Install the repository RPM
 sudo dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
-##  Uninstall default postgresql#########
+### Uninstall default postgresql#########
 yum remove postgresql.x86_64
 
-### Install postgresql server##########
+### Install postgresql server
 dnf install -y postgresql15-server postgresql-contrib postgresql15
 
-#### Install reqired package#############
+### Install reqired package
 yum install python3-pip python3-devel binutils -y
 yum install https://repo.percona.com/yum/percona-release-latest.noarch.rpm
 percona-release setup ppg13
 yum install percona-patroni etcd python3-python-etcd percona-pgbackrest
 
-######Firewall##########
+### Firewall
 
 firewall-cmd --add-port=2379/tcp --permanent
 firewall-cmd --add-port=2380/tcp --permanent
@@ -27,15 +27,15 @@ firewall-cmd --add-port=8008/tcp --permanent
 firewall-cmd --add-port=5432/tcp --permanent
 firewall-cmd --reload
 
-##########ETCD config##########
+### ETCD config
 
 systemctl stop {etcd,patroni,postgresql}
 systemctl disable {etcd,patroni,postgresql}
 mv  /etc/etcd/etcd.conf /etc/etcd/etcd.conf.bk
-vi /etc/etcd/etcd.conf                             ######Add etcd.conf
+vi /etc/etcd/etcd.conf                             *Add etcd.conf*
 systemctl enable --now etcd
 
-############Patroni setup########
+### Patroni setup
 
 mkdir -p /var/data/patroni
 chown -R postgres:postgres /var/data/
@@ -47,7 +47,7 @@ systemctl daemon-reload
 systemctl enable --now patroni
 
 
-###Test cluster###
+### Test cluster
 
 psql -h 10.10.10.10 -p 5432 -U postgres
 CREATE DATABASE app;
