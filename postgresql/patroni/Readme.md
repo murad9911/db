@@ -71,7 +71,7 @@ GRANT ALL ON SCHEMA public TO demo;
 ```
 
 
-> [!TIP]
+> [!Datacenter switchover]
 > Patroni switchover datacenter
 
 **Check repilication**
