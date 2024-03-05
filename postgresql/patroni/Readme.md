@@ -48,7 +48,7 @@
 
 
 ### Test cluster
-
+```
 psql -h 10.10.10.10 -p 5432 -U postgres
 CREATE DATABASE app;
  \c app;
@@ -63,7 +63,7 @@ CREATE DATABASE app;
  \d accounts;
  INSERT INTO accounts (username, password, email, created_at, last_login)
 VALUES ('user', '123456', 'user@test.local', 11-12-13, 11-12-13);
-
+```
 Select *  from accounts;
 
 
