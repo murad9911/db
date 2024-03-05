@@ -7,7 +7,7 @@
 ### Install the repository RPM
 *  sudo dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
-### Uninstall default postgresql#########
+### Uninstall default postgresql
 * yum remove postgresql.x86_64
 
 ### Install postgresql server
@@ -32,7 +32,7 @@
 * systemctl stop {etcd,patroni,postgresql}
 * systemctl disable {etcd,patroni,postgresql}
 * mv  /etc/etcd/etcd.conf /etc/etcd/etcd.conf.bk
-* vi /etc/etcd/etcd.conf                             * Add etcd.conf* 
+* vi /etc/etcd/etcd.conf                             * Add etcd.conf * 
 * systemctl enable --now etcd
 
 ### Patroni setup
