@@ -72,7 +72,7 @@ GRANT ALL ON SCHEMA public TO demo;
 
 
 > [!Note]
-> #c5f015 Patroni switchover datacenter
+#c5f015 Patroni switchover datacenter
 
 **Check repilication**
 * \x on;
