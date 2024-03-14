@@ -80,7 +80,7 @@ GRANT ALL ON SCHEMA public TO demo;
 
 
 > [!Note]
-> Datacernter switchover
+> Datacenter switchover
 
 **Check repilication**
  ```
