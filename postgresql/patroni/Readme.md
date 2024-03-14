@@ -57,6 +57,8 @@ dnf install -y postgresql15-server postgresql-contrib postgresql15
 ```
 psql -h 10.10.10.10 -p 5432 -U postgres
 CREATE DATABASE app;
+CREATE USER youruser WITH ENCRYPTED PASSWORD 'yourpass';
+GRANT ALL PRIVILEGES ON DATABASE yourdbname TO youruser;
  \c app;
  CREATE TABLE accountss (
 	user_id serial PRIMARY KEY,
